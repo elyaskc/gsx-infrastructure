@@ -73,7 +73,7 @@ Y para verificarlo:
 
 Para acceder a un servicio concreto con minikube:
 
-- `minikube service nginx`
+- `minikube service nginx` --> minikube abre automáticamente el servicio en el navegador
 - `minikube service nginx --url` --> esto obtiene la URL manualmente
 
 
