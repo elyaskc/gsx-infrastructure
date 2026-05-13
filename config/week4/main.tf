@@ -61,7 +61,7 @@ resource "kubernetes_deployment" "nginx" {
 
 resource "kubernetes_service" "nginx" {
     metadata {
-        name = "nginx_service"
+        name = "nginx-service"
     }
     spec {
         type = "NodePort"
@@ -118,7 +118,7 @@ resource "kubernetes_deployment" "python" {
                         value_from {
                             config_map_key_ref {
                               name = "app-config"
-                              key = DB_PASSWORD
+                              key = "DB_PASSWORD"
                             }
                         }
                     }
