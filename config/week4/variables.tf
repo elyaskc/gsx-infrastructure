@@ -26,5 +26,5 @@ variable "NGINX_IMAGE" {
 
 variable "PYTHON_IMAGE" {
   description = "Python image"
-  default     = "alexxx245/python-gsx:v1"
+  default     = "alexxx245/python-gsx:v2"
 }

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: python
-        image: alexxx245/python-gsx:v1
+        image: alexxx245/python-gsx:v2
         ports:
         - containerPort: 5000
         env:
