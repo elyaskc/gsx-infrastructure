@@ -29,7 +29,7 @@ config/week4/
 
 ```bash
 minikube start
-cd config/week4/terraform
+cd config/week4
 terraform init
 terraform apply
 kubectl get pods
