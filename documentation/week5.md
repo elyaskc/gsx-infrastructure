@@ -3,21 +3,15 @@
 
 ## Plan de Direccionamiento IP (CIDR)
 
-Subred        		| CIDR          | IPs disponibles | Uso
-------------------------|---------------|-----------------|----------------------------------
-Organización completa   | 10.0.0.0/16	| 65534		  | Rango global
-			|		| 		  |
-DMZ           		| 10.0.0.0/24	| 254		  | Servicios expuestos al exterior
-              		|		| 		  |
-Desarrollo		| 10.0.1.0/24	| 254		  | Entorno de desarrollo
-			|		| 		  |
-Staging			| 10.0.2.0/24	| 254		  | Entorno de pruebas
-			|		|		  |
-Producción		| 10.0.3.0/24	| 254	 	  | Entorno productivo
-			|		| 		  |
-Base de Datos		| 10.0.4.0/24	| 254		  | Servidores de BBDD
-			|		|		  |
-Partners		| 10.0.10.0/24	| 254		  | Acceso externo controlado
+| Subred | CIDR | IPs disponibles | Uso
+| ---|---|---|---
+| Organización completa   | 10.0.0.0/16	| 65534		  | Rango global
+| DMZ           		| 10.0.0.0/24	| 254		  | Servicios expuestos al exterior
+| Desarrollo		| 10.0.1.0/24	| 254		  | Entorno de desarrollo
+| Staging			| 10.0.2.0/24	| 254		  | Entorno de pruebas
+| Producción		| 10.0.3.0/24	| 254	 	  | Entorno productivo
+| Base de Datos		| 10.0.4.0/24	| 254		  | Servidores de BBDD
+| Partners		| 10.0.10.0/24	| 254		  | Acceso externo controlado
 
 
 Hemos elegido subredes /24 ya que la organización GreenDevCorp tiene 20 personas y no se necesitan tantas IPs por subred. El rango /16 para toda la organización da margen para crecer y añadir nuevas subredes sin tener que rediseñar la arquitectura.
@@ -77,21 +71,14 @@ Implementación propuesta:
 4. Grupos por rol: developers, devops, data-analysts, management. Cada uno con permisos distintos.
 5. Principio de mínimo privilegio: cada empleado solo tiene acceso a lo que necesita para su trabajo.
 
-Trade-offs
+Trade-offs:
 
-		|   IdP en la nube	|   LDAP/AD propio
-----------------|-----------------------|---------------------------
-Coste		|  Suscripción mensual	|  Infraestructura propia
-		|			|
-		|			|
-Mantenimiento	|  Mínimo		|  Alto
-		|			|
-		|			|
-Control 	|   Limitado	        |  Total
-		|			|
-		|			|
-Escalabilidad	|  Automática		|  Manual
-
+| | IdP en la nube | LDAP/AD propio
+| ---|---|---
+| Coste			 |  Suscripción mensual	|  Infraestructura propia
+| Mantenimiento	 |  Mínimo		    |  Alto
+| Control 		 |  Limitado	        |  Total
+| Escalabilidad	 |  Automática		|  Manual
 
 
 IdP en la nube es adecuado para GreenDevCorp y LDAP/AD es excesivo para 20 personas
