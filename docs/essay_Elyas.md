@@ -1,0 +1,13 @@
+# Reflection essay Elyas El Kouissi Charkaoui
+
+Antes de empezar esta práctica, mi visión de la infraestructura era bastante simple: un servidor, una aplicación, y listo. No entendía por qué las empresas necesitaban herramientas como Kubernetes o Terraform cuando parecia que con Docker era suficiente para correr contenedores.
+
+Para mí la parte más difícil fue entender Kubernetes y Terraform, qué relación tienen entre sí, qué problemas solucionan, y qué aportan realmente a parte de complejidad. Luego de hacer la práctica e investigar un poco más al respecto, entendí que se complementan: Kubernetes orquesta los contenedores manteniéndolos vivos y escalados, y Terraform automatiza la creación de toda esa infraestructura con un solo comando. Sin Terraform, tendría que aplicar manualmente cada YAML de Kubernetes y recordar el orden correcto cada vez. Con Terraform, un `terraform apply` lo hace todo.
+
+Lo que más me sorprendió fue la cantidad de herramientas y tecnologías que se utilizan solamente para infraestructura, nuevos lenguajes incluso. Pensaba que simplemente era configurar un servidor y listo, pero aparentemente es muchísimo más complejo de lo que parece. Kubernetes tiene sus propios conceptos (Pod, Deployment, Service, ConfigMap), Terraform tiene su propio lenguaje HCL, y GitHub Actions tiene su propia sintaxis YAML. Aprender todo esto a la vez fue bastante intenso.
+
+También me sorprendió el CI/CD. Que cada `git push` construya automáticamente las imágenes Docker, las suba a Docker Hub con un tag único y valide el código Terraform significa que cualquier error se detecta de forma inmediata. Al principio tuve problemas con la indentación del archivo `ci.yml` y con los permisos del token de Docker Hub, pero resolverlos me ayudó a entender mejor cómo funciona todo por dentro.
+
+Si empezara de cero, dedicaría más tiempo a entender los YAMLs de Kubernetes antes de pasar a Terraform. Hacer la traducción entre uno y otro es sencilla una vez entiendes la estructura, pero entender los parámetros y cómo los interpreta Kubernetes internamente es algo en lo que me gustaría profundizar más.
+
+Esta práctica ha cambiado completamente mi visión de DevOps. Antes pensaba que era simplemente automatizar despliegues. Ahora entiendo que es mucho más: infraestructura reproducible, versionada, observable y automatizada. Me gustaría aprender más profundamente cómo interactúan estas herramientas con el servidor internamente, y explorar cómo funciona Kubernetes en un entorno cloud real como AWS o Google Cloud.
